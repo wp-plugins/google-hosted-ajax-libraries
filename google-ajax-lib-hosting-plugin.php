@@ -2,7 +2,7 @@
 /*
 Plugin Name: Google Hosted AJAX Libraries
 Plugin URI: 
-Description: Allows administrators to enable or disable the use of Google hosted AJAX libraries.
+Description: Allows administrators to enable or disable the use of Google hosted AJAX libraries utilizing checkboxes. This plugin changes the internal WordPress script queues for the following AJAX Libraries: jQuery, jQuery UI, Prototype, Scriptaculous, MooTools, Yahoo! User Interface, Dojo, SWFObject, Ext-Core and Chrome Frame.
 Version:  1.0
 Author: Jay Fortner
 Author URI: http://code.google.com/p/w3prodigy-public
