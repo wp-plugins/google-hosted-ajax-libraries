@@ -3,7 +3,7 @@
 Plugin Name: Google Hosted AJAX Libraries
 Plugin URI: 
 Description: Allows administrators to enable or disable the use of Google hosted AJAX libraries utilizing checkboxes. This plugin changes the internal WordPress script queues for the following AJAX Libraries: jQuery, jQuery UI, Prototype, Scriptaculous, MooTools, Yahoo! User Interface, Dojo, SWFObject, Ext-Core and Chrome Frame.
-Version:  1.0
+Version:  1.1
 Author: Jay Fortner
 Author URI: http://code.google.com/p/w3prodigy-public
 License: GNU General Public License v2
@@ -30,9 +30,9 @@ function google_ajax_lib_hosting_init()
 	global $google_ajax_lib_hosting_settings, $setting_pre;
 	
 	foreach($google_ajax_lib_hosting_settings as $slug => $url) {
+		wp_deregister_script( $slug );
+		wp_register_script($slug,$url);
 		if(true == get_option($setting_pre . $slug)) {
-			wp_deregister_script( $slug );
-			wp_register_script($slug,$url);
 			wp_enqueue_script($slug,$url);
 		} // if
 	} // foreach
@@ -50,19 +50,17 @@ function google_ajax_lib_hosting_settings()
 {
 	global $google_ajax_lib_hosting_settings, $setting_pre;
 	
-	if( !empty($_POST) ) {
-		$post_google = $_POST['google'];
-		foreach($google_ajax_lib_hosting_settings as $slug => $url) {
-			delete_option($setting_pre . $slug);
-			if(!empty($post_google[$slug])) {
-				update_option($setting_pre . $slug, $post_google[$slug]);
-			} // if
-		} // foreach
-	} // if
+	$post_google = $_POST['google'];
+	foreach($google_ajax_lib_hosting_settings as $slug => $url) {
+		delete_option($setting_pre . $slug);
+		if(isset($post_google[$slug]) && !empty($post_google[$slug])) {
+			update_option($setting_pre . $slug, $post_google[$slug]);
+		} // if
+	} // foreach
 	?>
 	<div class="wrap">
 	<div id="icon-themes" class="icon32"><br></div>
-	<h2>Google AJAX Libraries</h2>
+	<h2>Google Hosted AJAX Libraries</h2>
 	<em><a href="http://code.google.com/apis/ajaxlibs/documentation/index.html" title="Google API for AJAX Libraries">http://code.google.com/apis/ajaxlibs/documentation/index.html</a></em>
 
 	<form method="post" action="<?php echo $_SERVER['PHP_SELF']."?".$_SERVER['QUERY_STRING']; ?>">
