@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Google Hosted AJAX Libraries
-Plugin URI: 
+Plugin URI: http://w3prodigy.com/wordpress-plugins/google-hosted-ajax-libraries/
 Description: This plugin changes the internal WordPress script queues for the following AJAX Libraries: jQuery, jQuery UI, Prototype, Scriptaculous, MooTools, Yahoo! User Interface, Dojo, SWFObject, Ext-Core, Chrome Frame and WebFont Loader.
 Version:  1.2
 Author: Jay Fortner
-Author URI: http://code.google.com/p/cotton-framework
+Author URI: http://w3prodigy.com
 License: GNU General Public License v2
 */
 
