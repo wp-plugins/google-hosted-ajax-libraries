@@ -33,7 +33,10 @@ class w3p_Google_Hosted_AJAX_Libraries {
 	} // function
 	
 	function init()
-	{
+	{	
+		if( is_admin() )
+			return false;
+		
 		foreach($this->settings as $slug => $url) {
 			wp_deregister_script( $slug );
 			wp_register_script($slug,$url);
