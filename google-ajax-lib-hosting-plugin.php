@@ -3,7 +3,7 @@
 Plugin Name: Google Hosted AJAX Libraries
 Plugin URI: http://w3prodigy.com/wordpress-plugins/google-hosted-ajax-libraries/
 Description: This plugin changes the internal WordPress script queues for the following AJAX Libraries: jQuery, jQuery UI, Prototype, Scriptaculous, MooTools, Yahoo! User Interface, Dojo, SWFObject, Ext-Core, Chrome Frame and WebFont Loader.
-Version:  1.2
+Version:  1.3
 Author: Jay Fortner
 Author URI: http://w3prodigy.com
 License: GNU General Public License v2
@@ -23,7 +23,7 @@ class w3p_Google_Hosted_AJAX_Libraries {
 			'moo-tools' => 'http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js',
 			'dojo' => 'http://ajax.googleapis.com/ajax/libs/dojo/1.4.1/dojo/dojo.xd.js',
 			'swfobject' => 'http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js',
-			'yui' => 'http://ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/yuiloader/yuiloader-min.js',
+			'yui' => 'https://ajax.googleapis.com/ajax/libs/yui/3.3.0/build/yui/yui-min.js',
 			'extcore' => 'http://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js',
 			'chrome-frame' => 'http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js',
 			'webfont-loader' => 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
@@ -41,5 +41,3 @@ class w3p_Google_Hosted_AJAX_Libraries {
 	} // function
 	
 } // class
-
-?>
